@@ -10,7 +10,7 @@ load_dotenv()
 
 class Search:
     def __init__(self):
-        self.es = Elasticsearch('http://localhost:9200')  # <-- connection options need to be added here
+        self.es = Elasticsearch('https://localhost:9200', basic_auth=('elastic', os.environ.get("ELASTIC_PASSWORD")), verify_certs=False)  # <-- connection options need to be added here
         client_info = self.es.info()
         print('Connected to Elasticsearch!')
         pprint(client_info.body)
