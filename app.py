@@ -53,7 +53,7 @@ def handle_search():
                 },
             },
         },
-        size=5,
+        size=10,
         from_=from_
     )
     aggs = {
